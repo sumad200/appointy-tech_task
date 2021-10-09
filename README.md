@@ -48,7 +48,7 @@
 
  
  ### Additional Features: ###
-  * Passwords securely stored with SHA256 such they can't be reverse engineered
+  * Passwords securely stored with SHA256 such that they can't be reverse engineered
 
  ### Installation  ###
   * Clone this repo or download code
