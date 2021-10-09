@@ -55,4 +55,4 @@
   * Place all files except readme in $GOPATH/src
   * Ensure that go.mongodb.org/mongo-driver is present
   * go run main.go
-  * run http://localhost:0483/{your request goes here} in Postman for best experience
+  * run http://localhost:0483/{your_request_goes_here} (refer above) in Postman for best experience
