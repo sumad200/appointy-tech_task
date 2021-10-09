@@ -166,7 +166,7 @@ func GetPost(response http.ResponseWriter, request *http.Request) {
 }
 
 func main() {
-	fmt.Println("Starting the application...")
+	fmt.Println("Starting the API on port 0483")
 	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
 	clientOptions := options.Client().ApplyURI("mongodb://localhost:27017")
 	client, _ = mongo.Connect(ctx, clientOptions)
