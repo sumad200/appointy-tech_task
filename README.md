@@ -44,3 +44,14 @@
   -**Get all users in the database**
    * GET request
    * URL : ‘/allusers' 
+
+
+ 
+ ### Additional Features: ###
+  * Passwords securely stored with SHA256 such they can't be reverse engineered
+
+ ### Installation  ###
+  * Clone this repo or download code
+  * Place all files except readme in $GOPATH/src
+  * Ensure that go.mongodb.org/mongo-driver is present
+  * go run main.go
