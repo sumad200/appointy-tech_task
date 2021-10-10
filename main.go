@@ -132,7 +132,8 @@ func GetUser(response http.ResponseWriter, request *http.Request) {
 		var person User
 		collection := client.Database("api-data").Collection("users")
 		ctx, _ := context.WithTimeout(context.Background(), 30*time.Second)
-		err := collection.FindOne(ctx, User{ID: id}).Decode(&person)
+		filter := bson.D{primitive.E{Key: "_id", Value: id}}
+		err := collection.FindOne(ctx, filter).Decode(&person)
 		if err != nil {
 			response.WriteHeader(http.StatusInternalServerError)
 			response.Write([]byte(`{ "message": "` + err.Error() + `" }`))
@@ -153,7 +154,8 @@ func GetPost(response http.ResponseWriter, request *http.Request) {
 		var post Posts
 		collection := client.Database("api-data").Collection("posts")
 		ctx, _ := context.WithTimeout(context.Background(), 30*time.Second)
-		err := collection.FindOne(ctx, Posts{ID: id}).Decode(&post)
+		filter := bson.D{primitive.E{Key: "_id", Value: id}}
+		err := collection.FindOne(ctx, filter).Decode(&post)
 		if err != nil {
 			response.WriteHeader(http.StatusInternalServerError)
 			response.Write([]byte(`{ "message": "` + err.Error() + `" }`))
